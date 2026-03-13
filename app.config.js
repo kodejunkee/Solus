@@ -1,0 +1,48 @@
+export default {
+  expo: {
+    name: "Solus",
+    slug: "Solus",
+    version: "1.0.0",
+    orientation: "portrait",
+    icon: "./assets/icon.png",
+    userInterfaceStyle: "light",
+    splash: {
+      image: "./assets/splash-icon.png",
+      resizeMode: "contain",
+      backgroundColor: "#ffffff"
+    },
+    ios: {
+      supportsTablet: true
+    },
+    android: {
+      adaptiveIcon: {
+        backgroundColor: "#E6F4FE",
+        foregroundImage: "./assets/android-icon-foreground.png",
+        backgroundImage: "./assets/android-icon-background.png",
+        monochromeImage: "./assets/android-icon-monochrome.png"
+      },
+      predictiveBackGestureEnabled: false,
+      package: "com.solus",
+      // This is the magic line that makes EAS Builds work!
+      googleServicesFile: process.env.GOOGLE_SERVICES_JSON || "./google-services.json"
+    },
+    plugins: [
+      [
+        "expo-notifications",
+        {
+          icon: "./assets/icon.png",
+          color: "#1E90FF"
+        }
+      ]
+    ],
+    web: {
+      favicon: "./assets/favicon.png"
+    },
+    extra: {
+      eas: {
+        projectId: "d66ecbca-1b25-4965-a078-b4eead66b619"
+      }
+    },
+    owner: "kode_junkee"
+  }
+};
